@@ -46,20 +46,16 @@ function pairs(names) {
     return names;
   }
 
-  let random1 = names.getRandom();
-  let random2 = names.getRandom();
-
-  let radnom4 = [random1, random2];
-  console.log(radnom4);
-
-  console.log(random1);
-  console.log(random2);
-
-  if (names.length === 2) {
-    let random1 = names.getRandom();
-    let random2 = names.getRandom();
-    return (names = [random1, random2]);
+  const result = [];
+  while (names.length > 1) {
+    const firstName = names.getRandom();
+    const secondName = names.getRandom();
+    const pair = [firstName, secondName];
+    result.push(pair);
+    console.log(result);
   }
+  if (names.length === 1) result.push(names);
+  return result;
 }
 
 module.exports = pairs;
